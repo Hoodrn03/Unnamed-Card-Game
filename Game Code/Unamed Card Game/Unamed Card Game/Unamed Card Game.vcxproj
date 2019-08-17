@@ -72,7 +72,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>inc;$(IncludePath)</IncludePath>
     <SourcePath>src;$(SourcePath)</SourcePath>
-    <OutDir>$(ProjectDir)bin</OutDir>
+    <OutDir>$(ProjectDir)bin\</OutDir>
     <LibraryPath>lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -129,10 +129,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\EventHandler.cpp" />
     <ClCompile Include="src\GameWindow.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inc\EventHandler.h" />
     <ClInclude Include="inc\GameWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
