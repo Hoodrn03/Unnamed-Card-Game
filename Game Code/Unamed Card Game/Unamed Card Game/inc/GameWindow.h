@@ -2,6 +2,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include <iostream>
+
 /*! \class GameWidow : This will be used to control the main game window. */
 class GameWindow
 {

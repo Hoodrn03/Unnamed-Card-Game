@@ -18,6 +18,8 @@ int GameWindow::m_CreateWindow(int width, int height)
 
 	if (m_RenderWindow.isOpen())
 	{
+		std::cout << "Window Open" << std::endl;
+
 		return 0; 
 	}
 

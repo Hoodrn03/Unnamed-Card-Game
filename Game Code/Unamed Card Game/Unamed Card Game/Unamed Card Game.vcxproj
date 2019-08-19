@@ -130,11 +130,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\EventHandler.cpp" />
+    <ClCompile Include="src\GameLoop.cpp" />
     <ClCompile Include="src\GameWindow.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\EventHandler.h" />
+    <ClInclude Include="inc\GameLoop.h" />
     <ClInclude Include="inc\GameWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

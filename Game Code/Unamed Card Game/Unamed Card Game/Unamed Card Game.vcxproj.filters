@@ -24,12 +24,18 @@
     <ClCompile Include="src\EventHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameLoop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\GameWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inc\EventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\GameLoop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
