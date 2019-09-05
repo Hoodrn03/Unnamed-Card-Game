@@ -58,6 +58,8 @@ int GameLoop::m_RunGame()
 /*! \fn GameplayLoop : This will hold the main gameplay loop, for this game it will be between two players. */
 int GameLoop::m_GameplayLoop()
 {
+	// Pregame Logic.
+
 	/*! \var The game board for the game, this will hold the cards on itself. */
 	GameBoard l_NewGameBoard;
 
@@ -65,6 +67,11 @@ int GameLoop::m_GameplayLoop()
 
 	while (m_clGameWindow.m_GetWindow().isOpen())
 	{
+		// Update Logic.
+
+		m_clMouse.m_SetMousePos(m_clGameWindow.m_GetWindow());
+		m_clMouse.m_UpdateMouseCurser();
+
 		// Events Here. 
 
 		m_clEventHandler.m_DetectEvents(m_clGameWindow.m_GetWindow());
@@ -74,6 +81,8 @@ int GameLoop::m_GameplayLoop()
 		// Draw Here. 
 
 		l_NewGameBoard.m_DrawGameBoard(m_clGameWindow.m_GetWindow()); 
+
+		m_clMouse.m_DrawMouseCurser(m_clGameWindow.m_GetWindow()); 
 
 		m_clGameWindow.m_DisplayWindow();
 	}

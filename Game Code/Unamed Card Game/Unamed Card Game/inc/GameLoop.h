@@ -4,6 +4,7 @@
 
 #include "GameWindow.h"
 #include "EventHandler.h"
+#include "Mouse.h"
 
 #include "GameBoard.h"
 
@@ -29,6 +30,8 @@ private:
 
 	/*! \var The event handler for the game, all events in the game will be processed through this class. */
 	EventHandler m_clEventHandler; 
+
+	Mouse m_clMouse; 
 
 public:
 
