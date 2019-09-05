@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-/*! \class GameWidow : This will be used to control the main game window. */
+/*! \class This will be used to control the main game window. */
 class GameWindow
 {
 public:

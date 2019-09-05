@@ -2,6 +2,8 @@
 
 #include "SFML/Graphics.hpp"
 
+/*! \class The event handler for the game, any and all of the events for this game will be processed through
+			this class. */
 class EventHandler
 {
 public:

@@ -9,6 +9,8 @@ GameLoop::~GameLoop()
 {
 }
 
+/*! \fn RunGame : This will be used to initiate the game, booting it onto the main menu. This will also handle all critical
+	errors, wherein the game closes. */
 int GameLoop::m_RunGame()
 {
 	int l_iError = 0;
@@ -53,9 +55,10 @@ int GameLoop::m_RunGame()
 	return 0;
 }
 
+/*! \fn GameplayLoop : This will hold the main gameplay loop, for this game it will be between two players. */
 int GameLoop::m_GameplayLoop()
 {
-
+	/*! \var The game board for the game, this will hold the cards on itself. */
 	GameBoard l_NewGameBoard;
 
 	l_NewGameBoard.m_CreateGameBoard(m_clGameWindow.m_GetWindow());
