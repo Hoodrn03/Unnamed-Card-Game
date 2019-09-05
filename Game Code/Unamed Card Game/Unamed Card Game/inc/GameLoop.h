@@ -3,8 +3,9 @@
 #include <iostream>
 
 #include "GameWindow.h"
-
 #include "EventHandler.h"
+
+#include "GameBoard.h"
 
 class GameLoop
 {

@@ -56,6 +56,10 @@ int GameLoop::m_RunGame()
 int GameLoop::m_GameplayLoop()
 {
 
+	GameBoard l_NewGameBoard;
+
+	l_NewGameBoard.m_CreateGameBoard(m_clGameWindow.m_GetWindow());
+
 	while (m_clGameWindow.m_GetWindow().isOpen())
 	{
 		// Events Here. 
@@ -65,6 +69,8 @@ int GameLoop::m_GameplayLoop()
 		m_clGameWindow.m_ClearWindow();
 
 		// Draw Here. 
+
+		l_NewGameBoard.m_DrawGameBoard(m_clGameWindow.m_GetWindow()); 
 
 		m_clGameWindow.m_DisplayWindow();
 	}
