@@ -5,6 +5,7 @@
 #include "GameWindow.h"
 #include "EventHandler.h"
 #include "Mouse.h"
+#include "Networking.h"
 
 #include "GameBoard.h"
 
@@ -32,6 +33,8 @@ private:
 	EventHandler m_clEventHandler; 
 
 	Mouse m_clMouse; 
+
+	Networking m_clNetworking; 
 
 public:
 

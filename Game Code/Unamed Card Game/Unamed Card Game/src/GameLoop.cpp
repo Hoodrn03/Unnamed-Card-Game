@@ -10,7 +10,7 @@ GameLoop::~GameLoop()
 }
 
 /*! \fn RunGame : This will be used to initiate the game, booting it onto the main menu. This will also handle all critical
-	errors, wherein the game closes. */
+					errors, wherein the game closes. */
 int GameLoop::m_RunGame()
 {
 	int l_iError = 0;
@@ -18,6 +18,26 @@ int GameLoop::m_RunGame()
 	try
 	{
 		l_iError = m_clGameWindow.m_CreateWindow(800, 800);
+
+		if (l_iError > 0)
+		{
+			throw l_iError;
+		}
+
+		char l_cRes = ' ';
+
+		std::cout << "Connect to either server or client (1) or (2) ... ";
+
+		std::cin >> l_cRes;
+
+		if (l_cRes == '1')
+		{
+			l_iError = m_clNetworking.m_OpenServer();
+		}
+		else
+		{
+			l_iError = m_clNetworking.m_ConnectToServer();
+		}
 
 		if (l_iError > 0)
 		{
@@ -39,6 +59,12 @@ int GameLoop::m_RunGame()
 		case 1:
 
 			std::cout << "Error Code : " << l_iErrorType << "Unable to open game window" << std::endl;
+
+			break;
+
+		case 2:
+
+			std::cout << "Error Code : " << l_iErrorType << "Unable to complete networking." << std::endl;
 
 			break;
 

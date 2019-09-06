@@ -135,6 +135,7 @@
     <ClCompile Include="src\GameWindow.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Mouse.cpp" />
+    <ClCompile Include="src\Networking.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\EventHandler.h" />
@@ -142,6 +143,7 @@
     <ClInclude Include="inc\GameLoop.h" />
     <ClInclude Include="inc\GameWindow.h" />
     <ClInclude Include="inc\Mouse.h" />
+    <ClInclude Include="inc\Networking.h" />
     <ClInclude Include="inc\SFML\Audio.hpp" />
     <ClInclude Include="inc\SFML\Audio\AlResource.hpp" />
     <ClInclude Include="inc\SFML\Audio\Export.hpp" />
