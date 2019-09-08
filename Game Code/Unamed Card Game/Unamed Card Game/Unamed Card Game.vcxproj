@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Card.cpp" />
     <ClCompile Include="src\EventHandler.cpp" />
     <ClCompile Include="src\GameBoard.cpp" />
     <ClCompile Include="src\GameLoop.cpp" />
@@ -138,6 +139,7 @@
     <ClCompile Include="src\Networking.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inc\Card.h" />
     <ClInclude Include="inc\EventHandler.h" />
     <ClInclude Include="inc\GameBoard.h" />
     <ClInclude Include="inc\GameLoop.h" />
