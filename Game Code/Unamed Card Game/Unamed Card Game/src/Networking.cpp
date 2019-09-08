@@ -9,6 +9,7 @@ Networking::~Networking()
 {
 }
 
+/*! \fn OpenServer : Used to open a server for a client to be connected. */
 int Networking::m_OpenServer()
 {
 	m_Listener.reset(new sf::TcpListener());
@@ -34,6 +35,7 @@ int Networking::m_OpenServer()
 	return 0;
 }
 
+/*! \fn ConnectToServer : Used to form a connection to a server. */
 int Networking::m_ConnectToServer()
 {
 	m_Socket.reset(new sf::TcpSocket());
@@ -50,4 +52,9 @@ int Networking::m_ConnectToServer()
 	std::cout << "Connected to Server." << std::endl;
 
 	return 0;
+}
+
+/*! \fn Used to send a message to the other connected person. */
+void Networking::m_SendMessage()
+{
 }

@@ -17,6 +17,8 @@ int GameLoop::m_RunGame()
 
 	try
 	{
+		// Setup game window.
+
 		l_iError = m_clGameWindow.m_CreateWindow(800, 800);
 
 		if (l_iError > 0)
@@ -24,25 +26,7 @@ int GameLoop::m_RunGame()
 			throw l_iError;
 		}
 
-		char l_cRes = ' ';
-
-		std::cout << "Connect to either server or client (1) or (2) ... ";
-
-		std::cin >> l_cRes;
-
-		if (l_cRes == '1')
-		{
-			l_iError = m_clNetworking.m_OpenServer();
-		}
-		else
-		{
-			l_iError = m_clNetworking.m_ConnectToServer();
-		}
-
-		if (l_iError > 0)
-		{
-			throw l_iError;
-		}
+		// Start gameplay loop.
 
 		l_iError = m_GameplayLoop();
 
@@ -52,17 +36,24 @@ int GameLoop::m_RunGame()
 		}
 
 	}
+
+	// Error checking. 
+
 	catch (int l_iErrorType)
 	{
 		switch (l_iErrorType)
 		{
 		case 1:
 
+			// Unable to open game window.
+
 			std::cout << "Error Code : " << l_iErrorType << "Unable to open game window" << std::endl;
 
 			break;
 
 		case 2:
+
+			// Unable to form a connection between host and server. 
 
 			std::cout << "Error Code : " << l_iErrorType << "Unable to complete networking." << std::endl;
 
