@@ -8,6 +8,7 @@
 #include "Networking.h"
 
 #include "GameBoard.h"
+#include "Collection.h"
 
 /*! \class This will be used to control the flow of the game. */
 class GameLoop

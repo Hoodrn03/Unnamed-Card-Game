@@ -1,0 +1,21 @@
+<Collection>
+<Card>
+<Name>Blink Dog</Name>
+<HP>22</HP>
+<Size>Small</Size>
+<Tribe>Fey</Tribe>
+<Portrait>NULL</Portrait>
+<AbilityName>Bite</AbilityName>
+<AbilityDescription>
+User Attacks a single enemy using its sharp teeth.
+</AbilityDescription>
+<AbilitySpeed>3</AbilitySpeed>
+<AbilityPower>4</AbilityPower>
+<AbilityName>Teleport</AbilityName>
+<AbilityDescription>
+User evades all damage this round; cannot be used twice in a row. 
+</AbilityDescription>
+<AbilitySpeed>0</AbilitySpeed>
+<AbilityPower>0</AbilityPower>
+</Card>
+</Collection>

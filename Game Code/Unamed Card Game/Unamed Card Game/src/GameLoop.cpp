@@ -13,6 +13,10 @@ GameLoop::~GameLoop()
 					errors, wherein the game closes. */
 int GameLoop::m_RunGame()
 {
+	Collection l_clCollection;
+
+	l_clCollection.m_LoadCardCollectionFromFile("assets/collection.xml");
+
 	int l_iError = 0;
 
 	try
