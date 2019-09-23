@@ -31,9 +31,13 @@ private:
 
 	std::string m_sCardName; 
 
-	int m_iHitPoints; 
+	std::string m_sTribe; 
 
-	std::string m_Tribe; 
+	std::string m_sSize;
+
+	std::string m_sPortrait;
+
+	int m_iHitPoints;
 
 	ability m_AbliltyOne; 
 
@@ -45,5 +49,18 @@ private:
 
 public:
 
+	void m_SetName(std::string name);
+
+	void m_SetTribe(std::string tribe);
+
+	void m_SetSize(std::string size);
+
+	void m_SetHitPoints(int hitpoints);
+
+	void m_SetAbilityOne(std::string name, std::string desc, int speed, int power);
+
+	void m_SetAbilityTwo(std::string name, std::string desc, int speed, int power);
+
+	void m_SetAbilityThree(std::string name, std::string desc, int speed, int power);
 
 };
