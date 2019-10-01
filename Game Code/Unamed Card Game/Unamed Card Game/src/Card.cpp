@@ -52,3 +52,24 @@ void Card::m_SetAbilityThree(std::string name, std::string desc, int speed, int 
 	m_AbilityThree.speed = speed;
 	m_AbilityThree.power = power; 
 }
+
+void Card::m_PrintCardDetails()
+{
+	// Print Data 
+
+	std::cout << "------------------------------"  << std::endl;
+
+	std::cout << "Current Name: " << m_sCardName << std::endl;
+	std::cout << "Current Hp: " << m_iHitPoints << std::endl;
+	std::cout << "Current Size: " << m_sSize << std::endl;
+	std::cout << "Current Tribe: " << m_sTribe << std::endl;
+	std::cout << "Current Portrait: " << "NULL" << std::endl;
+	std::cout << "Current Ability One Name: " << m_AbliltyOne.name << std::endl;
+	std::cout << "Current Ability One Description: " << m_AbliltyOne.description << std::endl;
+	std::cout << "Current Ability One Speed: " << m_AbliltyOne.speed << std::endl;
+	std::cout << "Current Ability One Power: " << m_AbliltyOne.power << std::endl;
+	std::cout << "Current Ability Two Name: " << m_AbilityTwo.name << std::endl;
+	std::cout << "Current Ability Two Description: " << m_AbilityTwo.description << std::endl;
+	std::cout << "Current Ability Two Speed: " << m_AbilityTwo.speed << std::endl;
+	std::cout << "Current Ability Two Power: " << m_AbilityTwo.power << std::endl;
+}

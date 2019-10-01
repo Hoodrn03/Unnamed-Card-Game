@@ -16,4 +16,34 @@
 		<AbilitySpeedTwo>0</AbilitySpeedTwo>
 		<AbilityPowerTwo>0</AbilityPowerTwo>
 	</Card>
+	<Card>
+		<Name>Harpy</Name>
+		<HP>38</HP>
+		<Size>Medium</Size>
+		<Tribe>Monstrosity</Tribe>
+		<Portrait>NULL</Portrait>
+		<AbilityNameOne>Claws</AbilityNameOne>
+		<AbilityDescriptionOne>User slashes at a single enemy using sharp claws.</AbilityDescriptionOne>
+		<AbilitySpeedOne>3</AbilitySpeedOne>
+		<AbilityPowerOne>4</AbilityPowerOne>
+		<AbilityNameTwo>Luring Song</AbilityNameTwo>
+		<AbilityDescriptionTwo>Target cannot target this creature for two rounds.</AbilityDescriptionTwo>
+		<AbilitySpeedTwo>1</AbilitySpeedTwo>
+		<AbilityPowerTwo>0</AbilityPowerTwo>
+	</Card>
+	<Card>
+		<Name>Bugbear</Name>
+		<HP>27</HP>
+		<Size>Medium</Size>
+		<Tribe>Goblinoid</Tribe>
+		<Portrait>NULL</Portrait>
+		<AbilityNameOne>Crush</AbilityNameOne>
+		<AbilityDescriptionOne>User atacks with a blunt weapon, targeting a single enemy.</AbilityDescriptionOne>
+		<AbilitySpeedOne>4</AbilitySpeedOne>
+		<AbilityPowerOne>6</AbilityPowerOne>
+		<AbilityNameTwo>Surprise attack</AbilityNameTwo>
+		<AbilityDescriptionTwo>If user attacks before targeted enemy deal an additional three damage.</AbilityDescriptionTwo>
+		<AbilitySpeedTwo>5</AbilitySpeedTwo>
+		<AbilityPowerTwo>6</AbilityPowerTwo>
+	</Card>
 </Collection>

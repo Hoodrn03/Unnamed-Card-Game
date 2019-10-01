@@ -63,4 +63,6 @@ public:
 
 	void m_SetAbilityThree(std::string name, std::string desc, int speed, int power);
 
+	void m_PrintCardDetails(); 
+
 };

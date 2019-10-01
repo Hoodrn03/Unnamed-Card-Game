@@ -69,42 +69,26 @@ void Collection::m_LoadCardCollectionFromFile(std::string filePath)
 		pugi::xml_node l_currADT = l_currCard.select_node(l_abiDesTwoQuery).node();
 		pugi::xml_node l_currAST = l_currCard.select_node(l_abiSpeedTwoQuery).node();
 		pugi::xml_node l_currAPT = l_currCard.select_node(l_abiPowTwoQuery).node();
-
-		// Print Data 
-
-		std::cout << "Current Name: " << l_currName.value() << std::endl;
-		std::cout << "Current Hp: " << l_currHealth.value() << std::endl;
-		std::cout << "Current Size: " << l_currSize.value() << std::endl;
-		std::cout << "Current Tribe: " << l_currTribe.value() << std::endl;
-		std::cout << "Current Portrait: " << l_currPort.value() << std::endl;
-		std::cout << "Current Ability One Name: " << l_currANO.value() << std::endl;
-		std::cout << "Current Ability One Description: " << l_currADO.value() << std::endl;
-		std::cout << "Current Ability One Speed: " << l_currASO.value() << std::endl;
-		std::cout << "Current Ability One Power: " << l_currAPO.value() << std::endl;
-		std::cout << "Current Ability Two Name: " << l_currANT.value() << std::endl;
-		std::cout << "Current Ability Two Description: " << l_currADT.value() << std::endl;
-		std::cout << "Current Ability Two Speed: " << l_currAST.value() << std::endl;
-		std::cout << "Current Ability Two Power: " << l_currAPT.value() << std::endl;
 		
 		// Create card
 
 		Card l_TempCard;
 
 		l_TempCard.m_SetName(l_currName.value());
-		l_TempCard.m_SetHitPoints((int) l_currHealth.value());
+		l_TempCard.m_SetHitPoints(std::atoi(l_currHealth.value()));
 		l_TempCard.m_SetSize(l_currSize.value());
 		l_TempCard.m_SetTribe(l_currTribe.value());
-		l_TempCard.m_SetAbilityOne(l_currANO.value(), l_currADO.value(), (int)l_currASO.value(), (int)l_currAPO.value());
-		l_TempCard.m_SetAbilityTwo(l_currANT.value(), l_currADT.value(), (int)l_currAST.value(), (int)l_currAPT.value());
+		l_TempCard.m_SetAbilityOne(l_currANO.value(), l_currADO.value(), std::atoi(l_currASO.value()), std::atoi(l_currAPO.value()));
+		l_TempCard.m_SetAbilityTwo(l_currANT.value(), l_currADT.value(), std::atoi(l_currAST.value()), std::atoi(l_currAPT.value()));
 
 		// Add card into collection. 
 
+		l_TempCard.m_PrintCardDetails();
+
 		v_clCardCollection.push_back(l_TempCard);
-
-		std::cout << "Current card count: " << v_clCardCollection.size() << std::endl;
-
 	}
 
+	std::cout << "Current card count: " << v_clCardCollection.size() << std::endl;
 
 }
 
