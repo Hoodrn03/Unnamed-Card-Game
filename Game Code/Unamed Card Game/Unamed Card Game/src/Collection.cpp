@@ -8,6 +8,11 @@ Collection::~Collection()
 {
 }
 
+Card Collection::m_GetCard(int index)
+{
+	return v_clCardCollection[index];
+}
+
 void Collection::m_LoadCardCollectionFromFile(std::string filePath)
 {
 	

@@ -13,9 +13,21 @@ GameLoop::~GameLoop()
 					errors, wherein the game closes. */
 int GameLoop::m_RunGame()
 {
-	Collection l_clCollection;
+	
 
-	l_clCollection.m_LoadCardCollectionFromFile("assets/collection.xml");
+	l_clCollection.m_LoadCardCollectionFromFile("assets/Objects/collection.xml");
+
+	sf::Font m_temp;
+
+	
+	if (!m_temp.loadFromFile("assets/Fonts/Arial.ttf"))
+	{
+		std::cout << "Unable to load font from file." << std::endl;
+	} 
+
+	l_clCollection.m_GetCard(0).m_SetMainCardFont(m_temp);
+
+	l_clCollection.m_GetCard(0).m_CreateCardImage();
 
 	int l_iError = 0;
 
@@ -101,7 +113,9 @@ int GameLoop::m_GameplayLoop()
 
 		// Draw Here. 
 
-		l_NewGameBoard.m_DrawGameBoard(m_clGameWindow.m_GetWindow()); 
+		// l_NewGameBoard.m_DrawGameBoard(m_clGameWindow.m_GetWindow()); 
+
+		l_clCollection.m_GetCard(0).m_DrawCard(m_clGameWindow.m_GetWindow());
 
 		m_clMouse.m_DrawMouseCurser(m_clGameWindow.m_GetWindow()); 
 

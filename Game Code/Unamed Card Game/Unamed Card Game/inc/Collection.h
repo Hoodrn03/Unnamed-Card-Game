@@ -30,5 +30,7 @@ private:
 
 public:
 
+	Card m_GetCard(int index);
+
 	void m_LoadCardCollectionFromFile(std::string filePath); 
 };

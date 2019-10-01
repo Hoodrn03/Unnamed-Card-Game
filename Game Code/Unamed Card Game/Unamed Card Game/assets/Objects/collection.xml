@@ -46,4 +46,19 @@
 		<AbilitySpeedTwo>5</AbilitySpeedTwo>
 		<AbilityPowerTwo>6</AbilityPowerTwo>
 	</Card>
+	<Card>
+		<Name>Faerie Dragon</Name>
+		<HP>14</HP>
+		<Size>Tiny</Size>
+		<Tribe>Dragon</Tribe>
+		<Portrait>NULL</Portrait>
+		<AbilityNameOne>Bite</AbilityNameOne>
+		<AbilityDescriptionOne>User Attacks a single enemy using its sharp teeth.</AbilityDescriptionOne>
+		<AbilitySpeedOne>3</AbilitySpeedOne>
+		<AbilityPowerOne>4</AbilityPowerOne>
+		<AbilityNameTwo>Euphoria Breath</AbilityNameTwo>
+		<AbilityDescriptionTwo>Target creature cannot act in the nect round of combat.</AbilityDescriptionTwo>
+		<AbilitySpeedTwo>9</AbilitySpeedTwo>
+		<AbilityPowerTwo>0</AbilityPowerTwo>
+	</Card>
 </Collection>
