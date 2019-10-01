@@ -61,4 +61,64 @@
 		<AbilitySpeedTwo>9</AbilitySpeedTwo>
 		<AbilityPowerTwo>0</AbilityPowerTwo>
 	</Card>
+	<Card>
+		<Name>Fire Elemental</Name>
+		<HP>102</HP>
+		<Size>Large</Size>
+		<Tribe>Elemental</Tribe>
+		<Portrait>NULL</Portrait>
+		<AbilityNameOne>Flame Touch</AbilityNameOne>
+		<AbilityDescriptionOne>Set target on fire, target takes 3 damage at the start of the next round.</AbilityDescriptionOne>
+		<AbilitySpeedOne>3</AbilitySpeedOne>
+		<AbilityPowerOne>2</AbilityPowerOne>
+		<AbilityNameTwo>Illumination</AbilityNameTwo>
+		<AbilityDescriptionTwo>The next action fails.</AbilityDescriptionTwo>
+		<AbilitySpeedTwo>3</AbilitySpeedTwo>
+		<AbilityPowerTwo>0</AbilityPowerTwo>
+	</Card>
+	<Card>
+		<Name>Duergar</Name>
+		<HP>26</HP>
+		<Size>Medium</Size>
+		<Tribe>Dwarf</Tribe>
+		<Portrait>NULL</Portrait>
+		<AbilityNameOne>War Pick</AbilityNameOne>
+		<AbilityDescriptionOne>Attack a single enemy with a converted pickaxe.</AbilityDescriptionOne>
+		<AbilitySpeedOne>4</AbilitySpeedOne>
+		<AbilityPowerOne>5</AbilityPowerOne>
+		<AbilityNameTwo>Enlarge</AbilityNameTwo>
+		<AbilityDescriptionTwo>Grow to twice the size "Large", dealing double damage.</AbilityDescriptionTwo>
+		<AbilitySpeedTwo>8</AbilitySpeedTwo>
+		<AbilityPowerTwo>0</AbilityPowerTwo>
+	</Card>
+	<Card>
+		<Name>Vine Blight</Name>
+		<HP>26</HP>
+		<Size>Medium</Size>
+		<Tribe>Plant</Tribe>
+		<Portrait>NULL</Portrait>
+		<AbilityNameOne>Constrict</AbilityNameOne>
+		<AbilityDescriptionOne>Grapple single target and delay its action by 3 initiative.</AbilityDescriptionOne>
+		<AbilitySpeedOne>7</AbilitySpeedOne>
+		<AbilityPowerOne>6</AbilityPowerOne>
+		<AbilityNameTwo>Entangiling Plants</AbilityNameTwo>
+		<AbilityDescriptionTwo>Roots and vines sprout preventing movement reducing all damage by half.</AbilityDescriptionTwo>
+		<AbilitySpeedTwo>2</AbilitySpeedTwo>
+		<AbilityPowerTwo>0</AbilityPowerTwo>
+	</Card>
+	<Card>
+		<Name>Gnoll</Name>
+		<HP>22</HP>
+		<Size>Medium</Size>
+		<Tribe>Gnoll</Tribe>
+		<Portrait>NULL</Portrait>
+		<AbilityNameOne>Pierce</AbilityNameOne>
+		<AbilityDescriptionOne>User attacks a single target with a long sharp weapon.</AbilityDescriptionOne>
+		<AbilitySpeedOne>4</AbilitySpeedOne>
+		<AbilityPowerOne>5</AbilityPowerOne>
+		<AbilityNameTwo>Rampage</AbilityNameTwo>
+		<AbilityDescriptionTwo>If this attack kills target enemy attack again targeting the enemy with the lowest health.</AbilityDescriptionTwo>
+		<AbilitySpeedTwo>5</AbilitySpeedTwo>
+		<AbilityPowerTwo>4</AbilityPowerTwo>
+	</Card>
 </Collection>

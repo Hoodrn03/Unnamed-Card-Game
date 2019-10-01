@@ -2,7 +2,7 @@
 
 Card::Card()
 {
-
+	
 }
 
 Card::~Card()
@@ -78,8 +78,8 @@ void Card::m_CreateCardImage()
 	m_AbilityThreeNameAndDesc.setFont(m_MainFont);
 	m_AbilityThreeSpeedAndPow.setFont(m_MainFont);
 
-	m_CardBody.setSize(sf::Vector2f(100.f, 200.f)); 
-	m_CardBody.setPosition(sf::Vector2f(20, 30)); 
+	m_CardBody.setSize(sf::Vector2f(100.f, 200.f));
+	m_CardBody.setPosition(sf::Vector2f(20, 30));
 	m_CardBody.setFillColor(sf::Color::White);
 
 }

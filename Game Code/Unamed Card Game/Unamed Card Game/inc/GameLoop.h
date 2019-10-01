@@ -37,8 +37,6 @@ private:
 
 	Networking m_clNetworking; 
 
-	Collection l_clCollection;
-
 public:
 
 	// Member Functions
