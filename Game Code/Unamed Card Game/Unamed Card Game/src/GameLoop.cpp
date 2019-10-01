@@ -88,15 +88,9 @@ int GameLoop::m_GameplayLoop()
 
 	l_clCollection.m_LoadCardCollectionFromFile("assets/Objects/collection.xml");
 
-	sf::Font m_temp;
+	l_clCollection.m_CreateCardBodies(100, 200);
 
-	if (!m_temp.loadFromFile("assets/Fonts/Arial.ttf"))
-	{
-		std::cout << "Unable to load font from file." << std::endl;
-	}
-
-	l_clCollection.m_GetCard(0).m_SetMainCardFont(m_temp);
-	l_clCollection.m_GetCard(0).m_CreateCardImage();
+	int l_iCardIndex = 1;
 
 	while (m_clGameWindow.m_GetWindow().isOpen())
 	{
@@ -115,7 +109,7 @@ int GameLoop::m_GameplayLoop()
 
 		// l_NewGameBoard.m_DrawGameBoard(m_clGameWindow.m_GetWindow()); 
 
-		l_clCollection.m_GetCard(0).m_DrawCard(m_clGameWindow.m_GetWindow());
+		l_clCollection.m_GetCard(l_iCardIndex).m_DrawCard(m_clGameWindow.m_GetWindow());
 
 		m_clMouse.m_DrawMouseCurser(m_clGameWindow.m_GetWindow()); 
 

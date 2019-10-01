@@ -11,7 +11,7 @@ struct ability
 {
 	std::string name, description;
 
-	int speed, power; 
+	int speed = 0, power = 0; 
 };
 
 /*! \class This will hold a single card object within the card collection. */
@@ -47,7 +47,7 @@ private:
 
 	/*! \var This will be the life of the card, it will determine how many hits it can take 
 				before being defeted. */
-	int m_iHitPoints;
+	int m_iHitPoints = 0;
 
 	/*! \var This is the first ability slot for the card, holding a basic attack. */
 	ability m_AbililtyOne; 
@@ -62,7 +62,7 @@ private:
 
 	// Card Drawing Objects
 
-	sf::Font m_MainFont;
+	std::shared_ptr<sf::Font> m_ptrMainFont;
 
 	sf::RectangleShape m_CardBody;
 
@@ -104,9 +104,13 @@ public:
 
 	void m_SetAbilityThree(std::string name, std::string desc, int speed, int power);
 
-	void m_SetMainCardFont(sf::Font &font);
+	void m_SetMainCardFont(sf::Font *font);
+
+	void m_SetCardSize(float width, float height); 
 
 	void m_CreateCardImage();
+
+	void m_CreateCardImage(float width, float height);
 
 	void m_PrintCardDetails(); 
 

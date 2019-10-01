@@ -32,5 +32,7 @@ public:
 
 	Card m_GetCard(int index);
 
+	void m_CreateCardBodies(float width, float height); 
+
 	void m_LoadCardCollectionFromFile(std::string filePath); 
 };

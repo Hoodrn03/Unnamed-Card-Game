@@ -207,7 +207,7 @@ void Mouse::m_UpdateTooltip(std::string dataToDisplay, sf::Vector2f viewPos, sf:
 
 	m_ToolTip.setPosition(viewPos.x + (viewSize.x * 0.01f), viewPos.y + (viewSize.y * 0.90f));
 
-	m_ToolTip.setCharacterSize(viewSize.y * 0.04f);
+	m_ToolTip.setCharacterSize((unsigned int)(viewSize.y / 6));
 }
 
 /*! \fn DrawToolTip : This will be use to draw the tool tip onto the game window.

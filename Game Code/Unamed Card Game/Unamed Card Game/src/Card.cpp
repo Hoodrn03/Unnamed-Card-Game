@@ -53,35 +53,43 @@ void Card::m_SetAbilityThree(std::string name, std::string desc, int speed, int 
 	m_AbilityThree.power = power; 
 }
 
-void Card::m_SetMainCardFont(sf::Font& font)
+void Card::m_SetMainCardFont(sf::Font* font)
 {
-	m_MainFont = font; 
+	m_ptrMainFont.reset(font);
+}
+
+void Card::m_SetCardSize(float width, float height)
+{
+	m_CardBody.setSize(sf::Vector2f(width, height));
+	m_CardBody.setPosition(sf::Vector2f(20, 30));
+	m_CardBody.setFillColor(sf::Color::White);
 }
 
 void Card::m_CreateCardImage()
 {
-	m_NameText.setFont(m_MainFont);
+	m_NameText.setFont(*m_ptrMainFont);
 	m_NameText.setString(m_sCardName);
 	
-	m_HitPointText.setFont(m_MainFont);
+	m_HitPointText.setFont(*m_ptrMainFont);
 	m_HitPointText.setString(std::to_string(m_iHitPoints));
 
-	m_SizeAndTribeText.setFont(m_MainFont);
+	m_SizeAndTribeText.setFont(*m_ptrMainFont);
 	m_SizeAndTribeText.setString(m_sSize + " " + m_sTribe); 
 
-	m_AbilityOneNameAndDesc.setFont(m_MainFont);
-	m_AbilityOneSpeedAndPow.setFont(m_MainFont);
+	m_AbilityOneNameAndDesc.setFont(*m_ptrMainFont);
+	m_AbilityOneSpeedAndPow.setFont(*m_ptrMainFont);
 
-	m_AbilityTwoNameAndDesc.setFont(m_MainFont);
-	m_AbilityTwoSpeedAndPow.setFont(m_MainFont);
+	m_AbilityTwoNameAndDesc.setFont(*m_ptrMainFont);
+	m_AbilityTwoSpeedAndPow.setFont(*m_ptrMainFont);
 
-	m_AbilityThreeNameAndDesc.setFont(m_MainFont);
-	m_AbilityThreeSpeedAndPow.setFont(m_MainFont);
+	m_AbilityThreeNameAndDesc.setFont(*m_ptrMainFont);
+	m_AbilityThreeSpeedAndPow.setFont(*m_ptrMainFont);
 
-	m_CardBody.setSize(sf::Vector2f(100.f, 200.f));
-	m_CardBody.setPosition(sf::Vector2f(20, 30));
-	m_CardBody.setFillColor(sf::Color::White);
+}
 
+void Card::m_CreateCardImage(float width, float height)
+{
+	
 }
 
 void Card::m_PrintCardDetails()

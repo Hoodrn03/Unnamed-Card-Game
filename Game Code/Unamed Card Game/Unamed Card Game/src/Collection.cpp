@@ -13,6 +13,14 @@ Card Collection::m_GetCard(int index)
 	return v_clCardCollection[index];
 }
 
+void Collection::m_CreateCardBodies(float width, float height)
+{
+	for (unsigned int i = 0; i < v_clCardCollection.size(); i++)
+	{
+		v_clCardCollection[i].m_SetCardSize(width, height); 
+	}
+}
+
 void Collection::m_LoadCardCollectionFromFile(std::string filePath)
 {
 	
