@@ -88,9 +88,9 @@ int GameLoop::m_GameplayLoop()
 
 	l_clCollection.m_LoadCardCollectionFromFile("assets/Objects/collection.xml");
 
-	l_clCollection.m_CreateCardBodies(100, 200);
+	l_clCollection.m_CreateCardBodies();
 
-	int l_iCardIndex = 1;
+	int l_iCardIndex = 4;
 
 	while (m_clGameWindow.m_GetWindow().isOpen())
 	{

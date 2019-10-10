@@ -108,9 +108,7 @@ public:
 
 	void m_SetCardSize(float width, float height); 
 
-	void m_CreateCardImage();
-
-	void m_CreateCardImage(float width, float height);
+	int m_GetCardSize(); 
 
 	void m_PrintCardDetails(); 
 

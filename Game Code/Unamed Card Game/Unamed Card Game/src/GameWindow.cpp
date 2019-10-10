@@ -16,6 +16,8 @@ int GameWindow::m_CreateWindow(int width, int height)
 {
 	m_RenderWindow.create(sf::VideoMode(width, height), "Unnamed Card Game");
 
+	m_RenderWindow.setFramerateLimit(60); 
+
 	if (m_RenderWindow.isOpen())
 	{
 		std::cout << "Window Open" << std::endl;

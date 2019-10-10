@@ -63,34 +63,40 @@ void Card::m_SetCardSize(float width, float height)
 	m_CardBody.setSize(sf::Vector2f(width, height));
 	m_CardBody.setPosition(sf::Vector2f(20, 30));
 	m_CardBody.setFillColor(sf::Color::White);
+
+	m_PortraitBox.setSize(sf::Vector2f(m_CardBody.getGlobalBounds().width * 0.8f, m_CardBody.getGlobalBounds().height * 0.3f));
+	m_PortraitBox.setPosition(sf::Vector2f(m_CardBody.getGlobalBounds().width * 0.1f + m_CardBody.getPosition().x, 
+		m_CardBody.getGlobalBounds().height * 0.1f + m_CardBody.getPosition().y));
+	m_PortraitBox.setFillColor(sf::Color::Blue);
 }
 
-void Card::m_CreateCardImage()
+int Card::m_GetCardSize()
 {
-	m_NameText.setFont(*m_ptrMainFont);
-	m_NameText.setString(m_sCardName);
-	
-	m_HitPointText.setFont(*m_ptrMainFont);
-	m_HitPointText.setString(std::to_string(m_iHitPoints));
+	if (m_sSize == "Tiny")
+	{
+		return 1;
+	}
+	else if (m_sSize == "Small")
+	{
+		return 1;
+	}
+	else if (m_sSize == "Medium")
+	{
+		return 1;
+	}
+	else if (m_sSize == "Large")
+	{
+		return 2;
+	}
+	else
+	{
+		return 3;
+	}
 
-	m_SizeAndTribeText.setFont(*m_ptrMainFont);
-	m_SizeAndTribeText.setString(m_sSize + " " + m_sTribe); 
-
-	m_AbilityOneNameAndDesc.setFont(*m_ptrMainFont);
-	m_AbilityOneSpeedAndPow.setFont(*m_ptrMainFont);
-
-	m_AbilityTwoNameAndDesc.setFont(*m_ptrMainFont);
-	m_AbilityTwoSpeedAndPow.setFont(*m_ptrMainFont);
-
-	m_AbilityThreeNameAndDesc.setFont(*m_ptrMainFont);
-	m_AbilityThreeSpeedAndPow.setFont(*m_ptrMainFont);
-
+	return -1;
 }
 
-void Card::m_CreateCardImage(float width, float height)
-{
-	
-}
+
 
 void Card::m_PrintCardDetails()
 {
@@ -116,24 +122,6 @@ void Card::m_PrintCardDetails()
 void Card::m_DrawCard(sf::RenderWindow &window)
 {
 	window.draw(m_CardBody);
+	window.draw(m_PortraitBox); 
 
-	window.draw(m_NameText);
-
-	window.draw(m_HitPointText);
-
-	window.draw(m_PortraitBox);
-
-	window.draw(m_SizeAndTribeText);
-
-	window.draw(m_AbilityOneNameAndDesc);
-
-	window.draw(m_AbilityOneSpeedAndPow);
-
-	window.draw(m_AbilityTwoNameAndDesc);
-
-	window.draw(m_AbilityTwoSpeedAndPow);
-
-	window.draw(m_AbilityThreeNameAndDesc);
-
-	window.draw(m_AbilityThreeSpeedAndPow);
 }

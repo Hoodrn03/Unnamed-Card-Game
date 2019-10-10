@@ -13,6 +13,27 @@ Card Collection::m_GetCard(int index)
 	return v_clCardCollection[index];
 }
 
+void Collection::m_CreateCardBodies()
+{
+	for (unsigned int i = 0; i < v_clCardCollection.size(); i++)
+	{
+		if (v_clCardCollection[i].m_GetCardSize() == 1)
+		{
+			v_clCardCollection[i].m_SetCardSize(m_SmallCard.x, m_SmallCard.y);
+		}
+		else if (v_clCardCollection[i].m_GetCardSize() == 2)
+		{
+			v_clCardCollection[i].m_SetCardSize(m_MediumCard.x, m_MediumCard.y);
+		}
+		else if (v_clCardCollection[i].m_GetCardSize() == 3)
+		{
+			v_clCardCollection[i].m_SetCardSize(m_LargeCard.x, m_LargeCard.y);
+		}
+
+		
+	}
+}
+
 void Collection::m_CreateCardBodies(float width, float height)
 {
 	for (unsigned int i = 0; i < v_clCardCollection.size(); i++)
