@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="inc\PUGIXML\pugixml.cpp" />
+    <ClCompile Include="src\BoxWithText.cpp" />
     <ClCompile Include="src\Card.cpp" />
     <ClCompile Include="src\Collection.cpp" />
     <ClCompile Include="src\EventHandler.cpp" />
@@ -141,6 +142,7 @@
     <ClCompile Include="src\Networking.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inc\BoxWithText.h" />
     <ClInclude Include="inc\Card.h" />
     <ClInclude Include="inc\EventHandler.h" />
     <ClInclude Include="inc\GameBoard.h" />
@@ -150,6 +152,7 @@
     <ClInclude Include="inc\Networking.h" />
     <ClInclude Include="inc\PUGIXML\pugiconfig.hpp" />
     <ClInclude Include="inc\PUGIXML\pugixml.hpp" />
+    <ClInclude Include="inc\ResourceManager.h" />
     <ClInclude Include="inc\SFML\Audio.hpp" />
     <ClInclude Include="inc\SFML\Audio\AlResource.hpp" />
     <ClInclude Include="inc\SFML\Audio\Export.hpp" />
