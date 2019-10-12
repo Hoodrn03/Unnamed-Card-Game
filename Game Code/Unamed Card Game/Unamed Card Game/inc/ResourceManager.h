@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <map>
 
 template <class T>
 class ResourceManager
@@ -24,18 +25,55 @@ public:
 
 	T& m_GetItemFromMap(std::string id)
 	{
-		std::map<std::string, T>::iterator l_It;
+		return m_ResourceMap[id]; 
+	}
+
+};
+
+template <>
+class ResourceManager <sf::Font>
+{
+	// Data Members 
+
+private:
+
+	std::map<std::string, sf::Font> m_ResourceMap;
+
+	// Member Functions 
+
+public:
+
+	void m_LoadFontFromFile(std::string id, std::string filePath)
+	{
+		sf::Font l_TempFont; 
+
+		if (l_TempFont.loadFromFile(filePath))
+		{
+			std::cout << "File: " << filePath << " Found and assigned the id: " << id << std::endl;
+
+			m_ResourceMap.insert(std::make_pair(id, l_TempFont)); 
+		}
+		else
+		{
+			std::cout << "Unable to load from file: " << filePath << ", " << id << "Not loaded into game." << std::endl;
+		}
+	}
+
+	sf::Font& m_GetItemFromMap(std::string id)
+	{
+		std::map<std::string, sf::Font>::iterator l_It;
 
 		l_It = m_ResourceMap.find(id);
 
 		if (l_It != m_ResourceMap.end())
 		{
-			return m_ResourceMap.at(id); 
+			return m_ResourceMap.at(id);
 		}
 
 		std::cout << "Unble to find element" << std::endl;
-			 
-		return T(); 
-	}
 
+		sf::Font l_EmptyFont; 
+
+		return l_EmptyFont;
+	}
 };

@@ -27,6 +27,12 @@ int GameLoop::m_RunGame()
 			throw l_iError;
 		}
 
+		// Load objects. 
+
+		m_clFontManager.m_LoadFontFromFile("Arial", "assets/Fonts/Arial.ttf");
+
+
+
 		// Start gameplay loop.
 
 		l_iError = m_GameplayLoop();
@@ -83,6 +89,9 @@ int GameLoop::m_GameplayLoop()
 
 	l_NewGameBoard.m_CreateGameBoard(m_clGameWindow.m_GetWindow());
 
+	// End of game board setup. 
+
+	// Setup Collection.
 
 	Collection l_clCollection;
 
@@ -91,6 +100,20 @@ int GameLoop::m_GameplayLoop()
 	l_clCollection.m_CreateCardBodies();
 
 	int l_iCardIndex = 4;
+
+	// End of collection setup.
+
+	// Test Objects
+
+	BoxWithText l_TempText; 
+
+	l_TempText.m_SetFont(m_clFontManager.m_GetItemFromMap("Arial"));
+
+	l_TempText.m_SetSizeAndText(200, 50, "Hello World");
+
+	l_TempText.m_SetPosition(100, 100); 
+
+	// End of test objects
 
 	while (m_clGameWindow.m_GetWindow().isOpen())
 	{
@@ -109,12 +132,16 @@ int GameLoop::m_GameplayLoop()
 
 		// l_NewGameBoard.m_DrawGameBoard(m_clGameWindow.m_GetWindow()); 
 
-		l_clCollection.m_GetCard(l_iCardIndex).m_DrawCard(m_clGameWindow.m_GetWindow());
+		// l_clCollection.m_GetCard(l_iCardIndex).m_DrawCard(m_clGameWindow.m_GetWindow());
+
+		l_TempText.m_DrawText(m_clGameWindow.m_GetWindow()); 
 
 		m_clMouse.m_DrawMouseCurser(m_clGameWindow.m_GetWindow()); 
 
 		m_clGameWindow.m_DisplayWindow();
 	}
+
+	// Exit main game loop. 
 
 	return 0;
 }

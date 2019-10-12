@@ -6,9 +6,12 @@
 #include "EventHandler.h"
 #include "Mouse.h"
 #include "Networking.h"
+#include "ResourceManager.h"
 
 #include "GameBoard.h"
 #include "Collection.h"
+
+#include "BoxWithText.h"
 
 /*! \class This will be used to control the flow of the game. */
 class GameLoop
@@ -36,6 +39,8 @@ private:
 	Mouse m_clMouse; 
 
 	Networking m_clNetworking; 
+
+	ResourceManager<sf::Font> m_clFontManager; 
 
 public:
 
