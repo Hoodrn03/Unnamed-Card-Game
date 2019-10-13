@@ -97,9 +97,11 @@ int GameLoop::m_GameplayLoop()
 
 	l_clCollection.m_LoadCardCollectionFromFile("assets/Objects/collection.xml");
 
+	l_clCollection.m_SetFontsForCards(m_clFontManager.m_GetItemFromMap("Arial")); 
+
 	l_clCollection.m_CreateCardBodies();
 
-	int l_iCardIndex = 4;
+	int l_iCardIndex = 0;
 
 	// End of collection setup.
 
@@ -118,15 +120,18 @@ int GameLoop::m_GameplayLoop()
 
 		m_clEventHandler.m_DetectEvents(m_clGameWindow.m_GetWindow());
 
+		if (m_clEventHandler.m_HandleEvents() < 0)
+		{
+			return -1;
+		}
+
 		m_clGameWindow.m_ClearWindow();
 
 		// Draw Here. 
 
 		// l_NewGameBoard.m_DrawGameBoard(m_clGameWindow.m_GetWindow()); 
 
-		// l_clCollection.m_GetCard(l_iCardIndex).m_DrawCard(m_clGameWindow.m_GetWindow());
-
-		l_TempText.m_DrawText(m_clGameWindow.m_GetWindow()); 
+		l_clCollection.m_GetCard(l_iCardIndex).m_DrawCard(m_clGameWindow.m_GetWindow());
 
 		m_clMouse.m_DrawMouseCurser(m_clGameWindow.m_GetWindow()); 
 

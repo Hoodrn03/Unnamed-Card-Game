@@ -8,6 +8,14 @@ Collection::~Collection()
 {
 }
 
+void Collection::m_SetFontsForCards(sf::Font& font)
+{
+	for (unsigned int i = 0; i < v_clCardCollection.size(); i++)
+	{
+		v_clCardCollection[i].m_SetMainCardFont(font); 
+	}
+}
+
 Card Collection::m_GetCard(int index)
 {
 	return v_clCardCollection[index];

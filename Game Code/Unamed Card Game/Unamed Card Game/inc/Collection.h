@@ -36,11 +36,22 @@ private:
 
 public:
 
+	// Setters 
+
+	void m_SetFontsForCards(sf::Font& font); 
+
+	// Getters 
+
 	Card m_GetCard(int index);
+
+	// Creators 
 
 	void m_CreateCardBodies();
 
 	void m_CreateCardBodies(float width, float height); 
 
+	// Loading from files
+
 	void m_LoadCardCollectionFromFile(std::string filePath); 
+
 };

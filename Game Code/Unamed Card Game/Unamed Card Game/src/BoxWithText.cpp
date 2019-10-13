@@ -13,7 +13,7 @@ Param One - sf::Font& : The address for the font being used.
 */
 void BoxWithText::m_SetFont(sf::Font& font)
 {
-	m_ptrMainFont.reset(&font);
+	m_ptrMainFont = &font;
 
 	m_Text.setFont(*m_ptrMainFont);
 }
@@ -24,6 +24,8 @@ Param One - String : The information being displayed.
 void BoxWithText::m_SetText(std::string s)
 {
 	m_Text.setString(s); 
+
+	m_Text.setFillColor(sf::Color::Black);
 }
 
 /*! \fn SetBoxSize : This will create the box.
@@ -66,7 +68,7 @@ void BoxWithText::m_SetPosition(float x, float y)
 */
 void BoxWithText::m_ResizeText()
 {
-	int l_iCharSize = 31;
+	int l_iCharSize = 20;
 
 	do
 	{
@@ -74,7 +76,8 @@ void BoxWithText::m_ResizeText()
 
 		m_Text.setCharacterSize(l_iCharSize);
 
-	} while (m_Text.getGlobalBounds().width > m_BoxForText.getGlobalBounds().width);
+	} while ((m_Text.getGlobalBounds().width > m_BoxForText.getGlobalBounds().width) 
+		|| (m_Text.getGlobalBounds().height > m_BoxForText.getGlobalBounds().height));
 }
 
 /*! \fn DrawText : This will draw the text into the window (Box Optional)
@@ -82,8 +85,20 @@ Param One - RenderWindow : The main game window
 */
 void BoxWithText::m_DrawText(sf::RenderWindow& window)
 {
-	// To see the bounds for the text uncomment the draw section for the box. 
-	// window.draw(m_BoxForText); 
 
 	window.draw(m_Text); 
+}
+
+/*! \fn DrawText : This will draw the text into the window (Box Optional)
+Param One - RenderWindow : The main game window. 
+Param Two - Bool : select if the box will be drawn (Yes == True).
+*/
+void BoxWithText::m_DrawText(sf::RenderWindow& window, bool drawBox)
+{
+	if (drawBox)
+	{
+		window.draw(m_BoxForText); 
+	}
+
+	window.draw(m_Text);
 }

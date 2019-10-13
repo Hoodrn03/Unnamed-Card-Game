@@ -22,7 +22,7 @@ public:
 private:
 
 	/*! \var A pointer to the address of a font used by the text in this box. */
-	std::shared_ptr<sf::Font> m_ptrMainFont; 
+	sf::Font* m_ptrMainFont = &sf::Font(); 
 
 	/*! \var The text information being displayed im the box. */
 	sf::Text m_Text; 
@@ -72,9 +72,16 @@ public:
 
 	// Draw elements
 
-	/*! \fn DrawText : This will draw the text into the window (Box Optional)
+	/*! \fn DrawText : This will draw the text into the window.
 	Param One - RenderWindow : The main game window
 	*/
-	void m_DrawText(sf::RenderWindow& window); 
+	void m_DrawText(sf::RenderWindow& window);
+
+	/*! \fn DrawText (Overload): This will draw the text into the window (Box Optional).
+	Param One - RenderWindow : The main game window.
+	Param Two - Bool : select if the box will be drawn (Yes == True).
+	*/
+	void m_DrawText(sf::RenderWindow& window, bool drawBox);
+
 
 };

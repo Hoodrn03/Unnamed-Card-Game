@@ -20,6 +20,8 @@ private:
 
 	// Data Members 
 
+	int m_iCurrentEventCode = 0; 
+
 public:
 
 	// Member Functions
@@ -33,6 +35,6 @@ public:
 	*Param One : Int - The code for the event detected. 
 	*Param Two : RenderWindow - The current game window. 
 	*/
-	void m_HandleEvents(int eventCode, sf::RenderWindow & gameWindow);
+	int m_HandleEvents();
 
 };

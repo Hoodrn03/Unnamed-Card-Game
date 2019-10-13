@@ -3,6 +3,8 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
+#include "BoxWithText.h"
+
 /*! \struct An ability for the card, it will have a name and a desctription of what it does, 
 		as well as a speed (how quickly it will trigger) and a power for how much damage it 
 		will do. 
@@ -68,6 +70,12 @@ private:
 
 	/*! \var This box will hold a picture for the card. */
 	sf::RectangleShape m_PortraitBox; 
+
+	BoxWithText m_clNameText; 
+
+	BoxWithText m_clHPText; 
+
+	BoxWithText m_clSizeAndClassText; 
 
 	// Member Functions 
 
