@@ -62,56 +62,89 @@ private:
 
 	// Card Drawing Objects
 
-	std::shared_ptr<sf::Font> m_ptrMainFont;
-
+	/*! \var This object will form the border for the card and will hold all of the other 
+				components within it. */
 	sf::RectangleShape m_CardBody;
 
-	sf::Text m_NameText;
-
-	sf::Text m_HitPointText; 
-
+	/*! \var This box will hold a picture for the card. */
 	sf::RectangleShape m_PortraitBox; 
-
-	sf::Text m_SizeAndTribeText; 
-
-	sf::Text m_AbilityOneNameAndDesc; 
-
-	sf::Text m_AbilityOneSpeedAndPow; 
-
-	sf::Text m_AbilityTwoNameAndDesc;
-
-	sf::Text m_AbilityTwoSpeedAndPow;
-
-	sf::Text m_AbilityThreeNameAndDesc;
-
-	sf::Text m_AbilityThreeSpeedAndPow;
 
 	// Member Functions 
 
 public:
 
+	// Setters
+	
+	/*! \fn SetName : Sets the name for this card. 
+	Param One - String : The loaded cards name. 
+	*/
 	void m_SetName(std::string name);
-
+	
+	/*! \fn SetTribe : Sets the tribe/classification for this card. 
+	Param One - String : The loaded cards Tribe. 
+	*/
 	void m_SetTribe(std::string tribe);
 
+	/*! \fn SetSize : Sets the number of card slots it takes up. 
+	Param One - String : The loaded cards Size.
+	*/
 	void m_SetSize(std::string size);
 
+	/*! \fn SetHitPoints : Sets the number of Hp the card has.
+	Param One - Int : The loaded cards Hit Points.
+	*/
 	void m_SetHitPoints(int hitpoints);
 
+	/*! \fn SetAbilityOne : Creates the first card ability.
+	Param One - String : The ability's Name.  
+	Param Two - String : The Description for the ability. 
+	Param Three - Int : The Speed for the ability/how quickly it will be performed.
+	Param Four - Int : The Power for the ability/how much damage it will do.  
+	*/
 	void m_SetAbilityOne(std::string name, std::string desc, int speed, int power);
 
+	/*! \fn SetAbilityTwo : Creates the second card ability.
+	Param One - String : The ability's Name.
+	Param Two - String : The Description for the ability.
+	Param Three - Int : The Speed for the ability/how quickly it will be performed.
+	Param Four - Int : The Power for the ability/how much damage it will do.
+	*/
 	void m_SetAbilityTwo(std::string name, std::string desc, int speed, int power);
 
+	/*! \fn SetAbilityThree : Creates the third card ability.
+	Param One - String : The ability's Name.
+	Param Two - String : The Description for the ability.
+	Param Three - Int : The Speed for the ability/how quickly it will be performed.
+	Param Four - Int : The Power for the ability/how much damage it will do.
+	*/
 	void m_SetAbilityThree(std::string name, std::string desc, int speed, int power);
 
-	void m_SetMainCardFont(sf::Font *font);
+	/*! \fn SetMainCardFont : Stores the address of the font which will be used.
+	Param One - Int : The loaded cards Hit Points.
+	*/
+	void m_SetMainCardFont(sf::Font &font);
 
+	/*! \fn SetCardSize : Creates the main card body (the RectangleShape for the card).
+	Param One - Float : The Width for the card.
+	Param Two - Float : The Height for the card. 
+	*/
 	void m_SetCardSize(float width, float height); 
 
+	// Getters 
+
+	/*! \fn GetCardSize : This will return the size classification for the card between tiny and Huge.
+	*/
 	int m_GetCardSize(); 
 
+	// Other
+
+	/*! \fn PrintCardDetails : This will print to the console all of the details the card has loaded from file. 
+	*/
 	void m_PrintCardDetails(); 
 
+	/*! \fn DrawCard : Using the main RenderWindow the card will be drawn onto the screen.
+	Param One - RenderWindow : The main game widow. 
+	*/
 	void m_DrawCard(sf::RenderWindow &window); 
 
 };

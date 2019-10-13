@@ -105,14 +105,6 @@ int GameLoop::m_GameplayLoop()
 
 	// Test Objects
 
-	BoxWithText l_TempText; 
-
-	l_TempText.m_SetFont(m_clFontManager.m_GetItemFromMap("Arial"));
-
-	l_TempText.m_SetSizeAndText(200, 50, "Hello World");
-
-	l_TempText.m_SetPosition(100, 100); 
-
 	// End of test objects
 
 	while (m_clGameWindow.m_GetWindow().isOpen())

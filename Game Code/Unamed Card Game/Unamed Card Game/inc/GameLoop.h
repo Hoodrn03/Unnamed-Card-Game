@@ -11,8 +11,6 @@
 #include "GameBoard.h"
 #include "Collection.h"
 
-#include "BoxWithText.h"
-
 /*! \class This will be used to control the flow of the game. */
 class GameLoop
 {
@@ -36,10 +34,13 @@ private:
 	/*! \var The event handler for the game, all events in the game will be processed through this class. */
 	EventHandler m_clEventHandler; 
 
+	/*! \var This will hold all of the functions for the mouse within the game. */
 	Mouse m_clMouse; 
 
+	/*! \var This will control the networking within the game. */
 	Networking m_clNetworking; 
 
+	/*! \var This will load and hold all of the fonts used by the game. */
 	ResourceManager<sf::Font> m_clFontManager; 
 
 public:
