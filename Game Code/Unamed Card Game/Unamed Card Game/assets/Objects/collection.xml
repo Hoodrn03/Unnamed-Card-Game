@@ -57,7 +57,7 @@
 		<AbilitySpeedOne>3</AbilitySpeedOne>
 		<AbilityPowerOne>4</AbilityPowerOne>
 		<AbilityNameTwo>Euphoria Breath</AbilityNameTwo>
-		<AbilityDescriptionTwo>Target creature cannot act in the nect round of combat.</AbilityDescriptionTwo>
+		<AbilityDescriptionTwo>Target creature cannot act in the next round of combat.</AbilityDescriptionTwo>
 		<AbilitySpeedTwo>9</AbilitySpeedTwo>
 		<AbilityPowerTwo>0</AbilityPowerTwo>
 	</Card>

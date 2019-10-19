@@ -77,6 +77,14 @@ private:
 
 	BoxWithText m_clSizeAndClassText; 
 
+	BoxWithText m_clAbilityOneNameNDesc;
+
+	BoxWithText m_clAbilityOnePowNSpeed; 
+
+	BoxWithText m_clAbilityTwoNameNDesc;
+
+	BoxWithText m_clAbilityTwoPowNSpeed;
+
 	// Member Functions 
 
 public:

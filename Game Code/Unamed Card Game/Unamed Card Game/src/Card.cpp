@@ -91,7 +91,10 @@ void Card::m_SetMainCardFont(sf::Font& font)
 	m_clNameText.m_SetFont(font); 
 	m_clHPText.m_SetFont(font);
 	m_clSizeAndClassText.m_SetFont(font);
-
+	m_clAbilityOneNameNDesc.m_SetFont(font); 
+	m_clAbilityOnePowNSpeed.m_SetFont(font);
+	m_clAbilityTwoNameNDesc.m_SetFont(font);
+	m_clAbilityTwoPowNSpeed.m_SetFont(font);
 }
 
 /*! \fn SetCardSize : Creates the main card body (the RectangleShape for the card).
@@ -100,6 +103,10 @@ Param Two - Float : The Height for the card.
 */
 void Card::m_SetCardSize(float width, float height)
 {
+	// Local variables
+
+	std::string l_sPartition = ": ";
+
 	// Setup Boxes 
 
 	m_CardBody.setSize(sf::Vector2f(width, height));
@@ -113,15 +120,45 @@ void Card::m_SetCardSize(float width, float height)
 	
 	// Setup Card Text
 
+	// Top of card
+
 	m_clNameText.m_SetSizeAndText(width * 0.4f, height * 0.1f, m_sCardName); 
 	m_clNameText.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.1f + m_CardBody.getPosition().x, m_CardBody.getPosition().y); 
 
 	m_clHPText.m_SetSizeAndText(width * 0.4f, height * 0.1f, ("HP : " + std::to_string(m_iHitPoints)));
 	m_clHPText.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.6f + m_CardBody.getPosition().x, m_CardBody.getPosition().y);
 
+	// Under Portrait
+
 	m_clSizeAndClassText.m_SetSizeAndText(width * 0.8f, height * 0.1f, (m_sSize + " " + m_sTribe));
 	m_clSizeAndClassText.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.1f + m_CardBody.getPosition().x, 
 		m_CardBody.getGlobalBounds().height * 0.4f + m_CardBody.getPosition().y);
+
+	// Abilities
+
+	// Ability One
+
+	m_clAbilityOneNameNDesc.m_SetSizeAndText(width * 0.725f, height * 0.2f, (m_AbililtyOne.name + l_sPartition + m_AbililtyOne.description));
+	m_clAbilityOneNameNDesc.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.1f + m_CardBody.getPosition().x,
+		m_CardBody.getGlobalBounds().height * 0.5f + m_CardBody.getPosition().y);
+
+	m_clAbilityOnePowNSpeed.m_SetSizeAndText(width * 0.1f, height * 0.2f, (std::to_string(m_AbililtyOne.speed) + " S" + 
+		"\n" + std::to_string(m_AbililtyOne.power) + " P"), 10);
+	m_clAbilityOnePowNSpeed.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.85f + m_CardBody.getPosition().x,
+		m_CardBody.getGlobalBounds().height * 0.5f + m_CardBody.getPosition().y);
+
+	// Ability Two 
+
+	m_clAbilityTwoNameNDesc.m_SetSizeAndText(width * 0.725f, height * 0.2f, (m_AbilityTwo.name + l_sPartition + m_AbilityTwo.description));
+	m_clAbilityTwoNameNDesc.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.1f + m_CardBody.getPosition().x,
+		m_CardBody.getGlobalBounds().height * 0.75f + m_CardBody.getPosition().y);
+
+	m_clAbilityTwoPowNSpeed.m_SetSizeAndText(width * 0.1f, height * 0.2f, (std::to_string(m_AbilityTwo.speed) + " S" +
+		"\n" + std::to_string(m_AbilityTwo.power) + " P"), 10);
+	m_clAbilityTwoPowNSpeed.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.85f + m_CardBody.getPosition().x,
+		m_CardBody.getGlobalBounds().height * 0.75f + m_CardBody.getPosition().y);
+
+	// Ability Three
 
 }
 
@@ -187,4 +224,10 @@ void Card::m_DrawCard(sf::RenderWindow &window)
 	m_clNameText.m_DrawText(window); 
 	m_clHPText.m_DrawText(window);
 	m_clSizeAndClassText.m_DrawText(window);
+	
+	m_clAbilityOneNameNDesc.m_DrawText(window, true);
+	m_clAbilityOnePowNSpeed.m_DrawText(window, true);
+
+	m_clAbilityTwoNameNDesc.m_DrawText(window, true);
+	m_clAbilityTwoPowNSpeed.m_DrawText(window, true);
 }

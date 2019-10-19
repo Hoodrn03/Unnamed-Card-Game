@@ -60,6 +60,14 @@ public:
 	*/
 	void m_SetSizeAndText(float width, float height, std::string s); 
 
+	/*! \fn SetSizeAndText : This will set the string being used by the text
+			and create the box at the same time.
+	Param One - Float : The Width for the box.
+	Param Two - Float : The Height for the box.
+	Param Three - String : The information being displayed.
+	*/
+	void m_SetSizeAndText(float width, float height, std::string s, unsigned int maxSize);
+
 	/*! \fn SetPosition : This will move the box with the text to a new location in the window.
 	Param One - Float : The X coord.
 	Param Two - Float : The Y coord.  
@@ -69,6 +77,10 @@ public:
 	/*! \fn ResizeText : This will ensure the text fits within the box if the box is resized.
 	*/
 	void m_ResizeText(); 
+
+	void m_ResizeText(unsigned int maxSize); 
+
+	void m_WrapText(unsigned int numberofLines);
 
 	// Draw elements
 
