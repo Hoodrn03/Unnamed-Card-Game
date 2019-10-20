@@ -1,5 +1,7 @@
 #pragma once
 
+#include "SFML/Graphics.hpp"
+
 #include <iostream>
 
 #include "GameWindow.h"
@@ -10,6 +12,8 @@
 
 #include "GameBoard.h"
 #include "Collection.h"
+
+#include "Targeting Types/SingleTarget.h"
 
 /*! \class This will be used to control the flow of the game. */
 class GameLoop

@@ -113,6 +113,13 @@ void Card::m_SetCardSize(float width, float height)
 	m_CardBody.setPosition(sf::Vector2f(20, 30));
 	m_CardBody.setFillColor(sf::Color::White);
 
+	float l_fOutlineSize = 0.05f, l_fOutlinePos = 0.025f;
+
+	m_CardOutline.setSize(sf::Vector2f(width + m_CardBody.getGlobalBounds().width * l_fOutlineSize, height + m_CardBody.getGlobalBounds().height * l_fOutlineSize));
+	m_CardOutline.setPosition(sf::Vector2f(m_CardBody.getPosition().x - (m_CardBody.getGlobalBounds().width * l_fOutlinePos),
+		m_CardBody.getPosition().y - (m_CardBody.getGlobalBounds().height * l_fOutlinePos)));
+	m_CardOutline.setFillColor(sf::Color::Red);
+
 	m_PortraitBox.setSize(sf::Vector2f(m_CardBody.getGlobalBounds().width * 0.8f, m_CardBody.getGlobalBounds().height * 0.3f));
 	m_PortraitBox.setPosition(sf::Vector2f(m_CardBody.getGlobalBounds().width * 0.1f + m_CardBody.getPosition().x, 
 		m_CardBody.getGlobalBounds().height * 0.1f + m_CardBody.getPosition().y));
@@ -165,6 +172,11 @@ void Card::m_SetCardSize(float width, float height)
 void Card::m_SetCardPosition(float x, float y)
 {
 	m_CardBody.setPosition(sf::Vector2f(x, y));
+
+	float l_fOutlinePos = 0.025f;
+
+	m_CardOutline.setPosition(sf::Vector2f(m_CardBody.getPosition().x - (m_CardBody.getGlobalBounds().width * l_fOutlinePos),
+		m_CardBody.getPosition().y - (m_CardBody.getGlobalBounds().height * l_fOutlinePos)));
 
 	m_PortraitBox.setPosition(sf::Vector2f(m_CardBody.getGlobalBounds().width * 0.1f + m_CardBody.getPosition().x,
 		m_CardBody.getGlobalBounds().height * 0.1f + m_CardBody.getPosition().y));
@@ -244,6 +256,11 @@ Param One - RenderWindow : The main game widow.
 */
 void Card::m_DrawCard(sf::RenderWindow &window)
 {
+	if (m_bDrawOutline == true)
+	{
+		window.draw(m_CardOutline);
+	}
+	
 	window.draw(m_CardBody);
 	window.draw(m_PortraitBox); 
 
@@ -256,4 +273,19 @@ void Card::m_DrawCard(sf::RenderWindow &window)
 
 	m_clAbilityTwoNameNDesc.m_DrawText(window, true);
 	m_clAbilityTwoPowNSpeed.m_DrawText(window, true);
+}
+
+bool Card::m_WithinCard(float xPos, float yPos)
+{
+	if (((xPos > m_CardBody.getPosition().x) && (yPos > m_CardBody.getPosition().y)) && 
+		((xPos < m_CardBody.getPosition().x + m_CardBody.getGlobalBounds().width) && (yPos < m_CardBody.getPosition().y + m_CardBody.getGlobalBounds().height)))
+	{
+		m_bDrawOutline = true;
+
+		return true; 
+	}
+
+	m_bDrawOutline = false;
+
+	return false;
 }

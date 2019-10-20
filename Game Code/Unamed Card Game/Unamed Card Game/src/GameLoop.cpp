@@ -110,6 +110,8 @@ int GameLoop::m_GameplayLoop()
 	l_clCollection.m_GetCard(l_iCardIndex).m_SetCardPosition(100, 500);
 	l_clCollection.m_GetCard(l_iCardIndex + 1).m_SetCardPosition(300, 100);
 
+	SingleTarget l_Target; 
+
 	// End of test objects
 
 	while (m_clGameWindow.m_GetWindow().isOpen())
@@ -118,6 +120,12 @@ int GameLoop::m_GameplayLoop()
 
 		m_clMouse.m_SetMousePos(m_clGameWindow.m_GetWindow());
 		m_clMouse.m_UpdateMouseCurser();
+
+		if ((m_clMouse.m_GetLMBDown()) && 
+			(l_clCollection.m_GetCard(l_iCardIndex + 1).m_WithinCard(m_clMouse.m_GetMousePos().x, m_clMouse.m_GetMousePos().y)))
+		{
+			l_Target.m_SetTarget(m_clMouse.m_GetMousePos().x, m_clMouse.m_GetMousePos().y); 
+		}
 
 		// Events Here. 
 
@@ -137,7 +145,7 @@ int GameLoop::m_GameplayLoop()
 		l_clCollection.m_GetCard(l_iCardIndex).m_DrawCard(m_clGameWindow.m_GetWindow());
 		l_clCollection.m_GetCard(l_iCardIndex + 1).m_DrawCard(m_clGameWindow.m_GetWindow());
 
-		m_clMouse.m_DrawMouseCurser(m_clGameWindow.m_GetWindow()); 
+		// m_clMouse.m_DrawMouseCurser(m_clGameWindow.m_GetWindow()); 
 
 		m_clGameWindow.m_DisplayWindow();
 	}

@@ -3,6 +3,9 @@
 #pragma once
 
 #include "SFML/Graphics.hpp"
+#include "SFML/Window.hpp"
+
+#include <iostream>
 
 /*! \class This class will be usd to maintain and manage mouse functions. */
 class Mouse
@@ -81,11 +84,13 @@ public:
 	//						Clicking
 	//--------------------------------------------------------
 
+	bool m_GetLMBDown();
+
 	/*! \var GetLMBDown : Used to check if the left mouse button is pressed. 
 	*Param One : Vector2f - The upper map bounds to check if the mouse is within a box.
 	*Param Two : Vector2f - The lower map bounds to check if the mouse is within a box.
 	*/
-	bool m_GetLMBDown(sf::Vector2f mapUpperBounds, sf::Vector2f mapLowerBounds); 
+	bool m_GetLMBDown(sf::Vector2f mapUpperBounds, sf::Vector2f mapLowerBounds);
 
 	//--------------------------------------------------------
 	//						Selecting

@@ -143,6 +143,7 @@
     <ClCompile Include="src\Networking.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inc\Ability Types\Damage.h" />
     <ClInclude Include="inc\BoxWithText.h" />
     <ClInclude Include="inc\Card.h" />
     <ClInclude Include="inc\CombatLoop.h" />
@@ -253,6 +254,7 @@
     <ClInclude Include="inc\SFML\Window\Window.hpp" />
     <ClInclude Include="inc\SFML\Window\WindowHandle.hpp" />
     <ClInclude Include="inc\SFML\Window\WindowStyle.hpp" />
+    <ClInclude Include="inc\Targeting Types\SingleTarget.h" />
     <ClInclude Include="inc\TGUI\AbsoluteOrRelativeValue.hpp" />
     <ClInclude Include="inc\TGUI\Animation.hpp" />
     <ClInclude Include="inc\TGUI\Any.hpp" />
@@ -400,6 +402,9 @@
     <None Include="inc\SFML\System\Vector3.inl" />
     <None Include="inc\TGUI\Aurora\Dispatch\Detail\DoubleDispatcher.inl" />
     <None Include="inc\TGUI\Aurora\Dispatch\Detail\SingleDispatcher.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="assets\Objects\collection.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

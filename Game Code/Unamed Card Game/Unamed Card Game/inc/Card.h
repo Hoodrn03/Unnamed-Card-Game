@@ -68,6 +68,10 @@ private:
 				components within it. */
 	sf::RectangleShape m_CardBody;
 
+	sf::RectangleShape m_CardOutline;
+
+	bool m_bDrawOutline = false; 
+
 	/*! \var This box will hold a picture for the card. */
 	sf::RectangleShape m_PortraitBox; 
 
@@ -164,5 +168,7 @@ public:
 	Param One - RenderWindow : The main game widow. 
 	*/
 	void m_DrawCard(sf::RenderWindow &window); 
+
+	bool m_WithinCard(float xPos, float yPos); 
 
 };

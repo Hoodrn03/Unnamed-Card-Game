@@ -34,6 +34,25 @@ sf::RenderWindow& GameWindow::m_GetWindow()
 	return m_RenderWindow;
 }
 
+sf::Vector2f GameWindow::m_GetUpperBounds()
+{
+	sf::Vector2f l_ReturnVector; 
+
+	l_ReturnVector = sf::Vector2f(m_RenderWindow.getPosition()); 
+
+	return l_ReturnVector;
+}
+
+sf::Vector2f GameWindow::m_GetLowerBounds()
+{
+	sf::Vector2f l_ReturnVector;
+
+	l_ReturnVector = sf::Vector2f(m_RenderWindow.getPosition().x + m_RenderWindow.getSize().x, 
+		m_RenderWindow.getPosition().y + m_RenderWindow.getSize().y);
+
+	return l_ReturnVector;
+}
+
 /*! \fn ClearWindow : Used to clear the game window. */
 void GameWindow::m_ClearWindow()
 {

@@ -37,6 +37,10 @@ public:
 	/*! \fn GetWindow : This will allow for access of the game window. */
 	sf::RenderWindow& m_GetWindow();
 
+	sf::Vector2f m_GetUpperBounds();
+
+	sf::Vector2f m_GetLowerBounds(); 
+
 	/*! \fn ClearWindow : Used to clear the game window. */
 	void m_ClearWindow();
 

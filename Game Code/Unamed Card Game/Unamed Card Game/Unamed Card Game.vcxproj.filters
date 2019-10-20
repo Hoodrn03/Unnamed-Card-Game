@@ -785,6 +785,12 @@
     <ClInclude Include="inc\CombatLoop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="inc\Targeting Types\SingleTarget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Ability Types\Damage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="inc\SFML\Audio\SoundFileFactory.inl">
@@ -820,5 +826,8 @@
     <None Include="inc\TGUI\Aurora\Dispatch\Detail\SingleDispatcher.inl">
       <Filter>Header Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="assets\Objects\collection.xml" />
   </ItemGroup>
 </Project>

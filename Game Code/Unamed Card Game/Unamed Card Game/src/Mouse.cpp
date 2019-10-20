@@ -77,6 +77,22 @@ void Mouse::m_UpdateMouseCurser()
 *Param One : Vector2f - The upper map bounds to check if the mouse is within a box.
 *Param Two : Vector2f - The lower map bounds to check if the mouse is within a box.
 */
+bool Mouse::m_GetLMBDown()
+{
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+	{
+		// std::cout << "Left Down" << std::endl;
+
+		return true;
+	}
+
+	return false; 
+}
+
+/*! \var GetLMBDown : Used to check if the left mouse button is pressed.
+*Param One : Vector2f - The upper map bounds to check if the mouse is within a box.
+*Param Two : Vector2f - The lower map bounds to check if the mouse is within a box.
+*/
 bool Mouse::m_GetLMBDown(sf::Vector2f mapUpperBounds, sf::Vector2f mapLowerBounds)
 {
 	if (((m_MousePos.x > mapUpperBounds.x) && (m_MousePos.y > mapUpperBounds.y)) && 
