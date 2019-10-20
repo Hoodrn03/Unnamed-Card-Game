@@ -1,124 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- 
+This will form the card collection within the game. It will allow for the easy addition of 
+more cards into the game by simply adding a new <Card> and populating it with the relevant data
+
+Ability types will determine how a given card will act within the combat round of the game. 
+
+Ability Types : 
+				Damage (Basic attack) 
+				SurpriseAttack (Extra Damage if the card acts before target)
+				Rampage (If card kills target enemy attack another target)
+				DamageOverTime (Extra damage at the start of the following round)
+				Enlarge (Double Damage, but takes an additional space on the board)
+				Evasion (Avoid all damage this round)
+				ForcedTarget (selected cards must target selected card with abilities)
+				Disabled (Unable to attack next round)
+				Stunnded (Unable to act this round)
+				Grappled (Selected cards deal half damage)
+				Slowed (Target Acts slower for a number of rounds)
+
+In addition the ability types the abilities will also have a target type; this will determine 
+how targets are selected for abilities. 
+
+Target Types : 
+				Self (This card is selected for the ability target)
+				Single (One card is selected)
+				Multiple (Two cards are selected)
+				AllEnemy (All opponents cards are selected)
+				All (All cards on both sides of the board are selected)
+				RandomEnemy (A random target is selected from all enemies)
+				RandomAlly (A random target is selected from player's own cards)
+				RandomAll (A random target is selected from all cards on the board)
+-->
+
 <Collection>
 	<Card>
+		<!--Card Start-->
 		<Name>Blink Dog</Name>
 		<HP>22</HP>
 		<Size>Small</Size>
 		<Tribe>Fey</Tribe>
 		<Portrait>NULL</Portrait>
+		<!--Ability One-->
 		<AbilityNameOne>Bite</AbilityNameOne>
 		<AbilityDescriptionOne>User Attacks a single enemy using its sharp teeth.</AbilityDescriptionOne>
 		<AbilitySpeedOne>3</AbilitySpeedOne>
 		<AbilityPowerOne>4</AbilityPowerOne>
+		<AbilityTypeOne>Damage</AbilityTypeOne>
+		<AbilitTargetingOne>Single</AbilitTargetingOne>
+		<!--Ability Two-->
 		<AbilityNameTwo>Teleport</AbilityNameTwo>
 		<AbilityDescriptionTwo>User evades all damage this round; cannot be used twice in a row.</AbilityDescriptionTwo>
 		<AbilitySpeedTwo>0</AbilitySpeedTwo>
 		<AbilityPowerTwo>0</AbilityPowerTwo>
+		<AbilityTypeTwo>Evasion</AbilityTypeTwo>
+		<AbilitTargetingTwo>Self</AbilitTargetingTwo>
+		<!--Card End-->
 	</Card>
 	<Card>
+		<!--Card Start-->
 		<Name>Harpy</Name>
 		<HP>38</HP>
 		<Size>Medium</Size>
 		<Tribe>Monstrosity</Tribe>
 		<Portrait>NULL</Portrait>
+		<!--Ability One-->
 		<AbilityNameOne>Claws</AbilityNameOne>
 		<AbilityDescriptionOne>User slashes at a single enemy using sharp claws.</AbilityDescriptionOne>
 		<AbilitySpeedOne>3</AbilitySpeedOne>
 		<AbilityPowerOne>4</AbilityPowerOne>
+		<AbilityTypeOne>Damage</AbilityTypeOne>
+		<AbilitTargetingOne>Single</AbilitTargetingOne>
+		<!--Ability Two-->
 		<AbilityNameTwo>Luring Song</AbilityNameTwo>
-		<AbilityDescriptionTwo>Target cannot target this creature for two rounds.</AbilityDescriptionTwo>
+		<AbilityDescriptionTwo>Target must target selected creature for two rounds.</AbilityDescriptionTwo>
 		<AbilitySpeedTwo>1</AbilitySpeedTwo>
 		<AbilityPowerTwo>0</AbilityPowerTwo>
+		<AbilityTypeTwo>ForcedTarget</AbilityTypeTwo>
+		<AbilitTargetingTwo>Single</AbilitTargetingTwo>
+		<!--Card End-->
 	</Card>
 	<Card>
+		<!--Card Start-->
 		<Name>Bugbear</Name>
 		<HP>27</HP>
 		<Size>Medium</Size>
 		<Tribe>Goblinoid</Tribe>
 		<Portrait>NULL</Portrait>
+		<!--Ability One-->
 		<AbilityNameOne>Crush</AbilityNameOne>
 		<AbilityDescriptionOne>User atacks with a blunt weapon, targeting a single enemy.</AbilityDescriptionOne>
 		<AbilitySpeedOne>4</AbilitySpeedOne>
 		<AbilityPowerOne>6</AbilityPowerOne>
+		<AbilityTypeOne>Damage</AbilityTypeOne>
+		<!--Ability Two-->
 		<AbilityNameTwo>Surprise attack</AbilityNameTwo>
 		<AbilityDescriptionTwo>If user attacks before targeted enemy deal an additional three damage.</AbilityDescriptionTwo>
 		<AbilitySpeedTwo>5</AbilitySpeedTwo>
 		<AbilityPowerTwo>6</AbilityPowerTwo>
+		<AbilityTypeTwo>SurpriseAttack</AbilityTypeTwo>
+		<!--Card End-->
 	</Card>
 	<Card>
+		<!--Card Start-->
 		<Name>Faerie Dragon</Name>
 		<HP>14</HP>
 		<Size>Tiny</Size>
 		<Tribe>Dragon</Tribe>
 		<Portrait>NULL</Portrait>
+		<!--Ability One-->
 		<AbilityNameOne>Bite</AbilityNameOne>
 		<AbilityDescriptionOne>User Attacks a single enemy using its sharp teeth.</AbilityDescriptionOne>
 		<AbilitySpeedOne>3</AbilitySpeedOne>
 		<AbilityPowerOne>4</AbilityPowerOne>
+		<AbilityTypeOne>Damage</AbilityTypeOne>
+		<!--Ability Two-->
 		<AbilityNameTwo>Euphoria Breath</AbilityNameTwo>
 		<AbilityDescriptionTwo>Target creature cannot act in the next round of combat.</AbilityDescriptionTwo>
 		<AbilitySpeedTwo>9</AbilitySpeedTwo>
 		<AbilityPowerTwo>0</AbilityPowerTwo>
+		<AbilityTypeTwo>Disabled</AbilityTypeTwo>
+		<!--Card End-->
 	</Card>
 	<Card>
+		<!--Card Start-->
 		<Name>Fire Elemental</Name>
 		<HP>102</HP>
 		<Size>Large</Size>
 		<Tribe>Elemental</Tribe>
 		<Portrait>NULL</Portrait>
+		<!--Ability One-->
 		<AbilityNameOne>Flame Touch</AbilityNameOne>
 		<AbilityDescriptionOne>Set target on fire, target takes 3 damage at the start of the next round.</AbilityDescriptionOne>
 		<AbilitySpeedOne>3</AbilitySpeedOne>
 		<AbilityPowerOne>2</AbilityPowerOne>
+		<AbilityTypeOne>DamageOverTime</AbilityTypeOne>
+		<!--Ability Two-->
 		<AbilityNameTwo>Illumination</AbilityNameTwo>
 		<AbilityDescriptionTwo>The next action fails.</AbilityDescriptionTwo>
 		<AbilitySpeedTwo>3</AbilitySpeedTwo>
 		<AbilityPowerTwo>0</AbilityPowerTwo>
+		<AbilityTypeTwo>Stunnded</AbilityTypeTwo>
+		<!--Card End-->
 	</Card>
 	<Card>
+		<!--Card Start-->
 		<Name>Duergar</Name>
 		<HP>26</HP>
 		<Size>Medium</Size>
 		<Tribe>Dwarf</Tribe>
 		<Portrait>NULL</Portrait>
+		<!--Ability One-->
 		<AbilityNameOne>War Pick</AbilityNameOne>
 		<AbilityDescriptionOne>Attack a single enemy with a converted pickaxe.</AbilityDescriptionOne>
 		<AbilitySpeedOne>4</AbilitySpeedOne>
 		<AbilityPowerOne>5</AbilityPowerOne>
+		<AbilityTypeOne>Damage</AbilityTypeOne>
+		<!--Ability Two-->
 		<AbilityNameTwo>Enlarge</AbilityNameTwo>
 		<AbilityDescriptionTwo>Grow to twice the size "Large", dealing double damage.</AbilityDescriptionTwo>
 		<AbilitySpeedTwo>8</AbilitySpeedTwo>
 		<AbilityPowerTwo>0</AbilityPowerTwo>
+		<AbilityTypeTwo>Enlarge</AbilityTypeTwo>
+		<!--Card End-->
 	</Card>
 	<Card>
+		<!--Card Start-->
 		<Name>Vine Blight</Name>
 		<HP>26</HP>
 		<Size>Medium</Size>
 		<Tribe>Plant</Tribe>
 		<Portrait>NULL</Portrait>
+		<!--Ability One-->
 		<AbilityNameOne>Constrict</AbilityNameOne>
 		<AbilityDescriptionOne>Grapple single target and delay its action by 3 initiative.</AbilityDescriptionOne>
 		<AbilitySpeedOne>7</AbilitySpeedOne>
 		<AbilityPowerOne>6</AbilityPowerOne>
+		<AbilityTypeOne>Slowed</AbilityTypeOne>
+		<!--Ability Two-->
 		<AbilityNameTwo>Entangiling Plants</AbilityNameTwo>
 		<AbilityDescriptionTwo>Roots and vines sprout preventing movement reducing all damage by half.</AbilityDescriptionTwo>
 		<AbilitySpeedTwo>2</AbilitySpeedTwo>
 		<AbilityPowerTwo>0</AbilityPowerTwo>
+		<AbilityTypeTwo>Grappled</AbilityTypeTwo>
+		<!--Card End-->
 	</Card>
 	<Card>
+		<!--Card Start-->
 		<Name>Gnoll</Name>
 		<HP>22</HP>
 		<Size>Medium</Size>
 		<Tribe>Gnoll</Tribe>
 		<Portrait>NULL</Portrait>
+		<!--Ability One-->
 		<AbilityNameOne>Pierce</AbilityNameOne>
 		<AbilityDescriptionOne>User attacks a single target with a long sharp weapon.</AbilityDescriptionOne>
 		<AbilitySpeedOne>4</AbilitySpeedOne>
 		<AbilityPowerOne>5</AbilityPowerOne>
+		<AbilityTypeOne>Damage</AbilityTypeOne>
+		<!--Ability Two-->
 		<AbilityNameTwo>Rampage</AbilityNameTwo>
 		<AbilityDescriptionTwo>If this attack kills target enemy attack again targeting the enemy with the lowest health.</AbilityDescriptionTwo>
 		<AbilitySpeedTwo>5</AbilitySpeedTwo>
 		<AbilityPowerTwo>4</AbilityPowerTwo>
+		<AbilityTypeTwo>Rampage</AbilityTypeTwo>
+		<!--Card End-->
 	</Card>
 </Collection>

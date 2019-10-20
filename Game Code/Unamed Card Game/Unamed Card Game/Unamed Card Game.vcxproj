@@ -133,6 +133,7 @@
     <ClCompile Include="src\BoxWithText.cpp" />
     <ClCompile Include="src\Card.cpp" />
     <ClCompile Include="src\Collection.cpp" />
+    <ClCompile Include="src\CombatLoop.cpp" />
     <ClCompile Include="src\EventHandler.cpp" />
     <ClCompile Include="src\GameBoard.cpp" />
     <ClCompile Include="src\GameLoop.cpp" />
@@ -144,6 +145,7 @@
   <ItemGroup>
     <ClInclude Include="inc\BoxWithText.h" />
     <ClInclude Include="inc\Card.h" />
+    <ClInclude Include="inc\CombatLoop.h" />
     <ClInclude Include="inc\EventHandler.h" />
     <ClInclude Include="inc\GameBoard.h" />
     <ClInclude Include="inc\GameLoop.h" />

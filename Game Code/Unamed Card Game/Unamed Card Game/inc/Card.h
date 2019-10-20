@@ -11,7 +11,7 @@
 */
 struct ability
 {
-	std::string name, description;
+	std::string name, description, targetType, abilityType;
 
 	int speed = 0, power = 0; 
 };
@@ -145,6 +145,8 @@ public:
 	Param Two - Float : The Height for the card. 
 	*/
 	void m_SetCardSize(float width, float height); 
+
+	void m_SetCardPosition(float x, float y); 
 
 	// Getters 
 

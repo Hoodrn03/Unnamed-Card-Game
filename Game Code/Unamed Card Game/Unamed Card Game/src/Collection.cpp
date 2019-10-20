@@ -16,7 +16,7 @@ void Collection::m_SetFontsForCards(sf::Font& font)
 	}
 }
 
-Card Collection::m_GetCard(int index)
+Card & Collection::m_GetCard(int index)
 {
 	return v_clCardCollection[index];
 }

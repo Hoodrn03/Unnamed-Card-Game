@@ -42,7 +42,7 @@ public:
 
 	// Getters 
 
-	Card m_GetCard(int index);
+	Card &m_GetCard(int index);
 
 	// Creators 
 

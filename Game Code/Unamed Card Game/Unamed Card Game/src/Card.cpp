@@ -162,6 +162,32 @@ void Card::m_SetCardSize(float width, float height)
 
 }
 
+void Card::m_SetCardPosition(float x, float y)
+{
+	m_CardBody.setPosition(sf::Vector2f(x, y));
+
+	m_PortraitBox.setPosition(sf::Vector2f(m_CardBody.getGlobalBounds().width * 0.1f + m_CardBody.getPosition().x,
+		m_CardBody.getGlobalBounds().height * 0.1f + m_CardBody.getPosition().y));
+	
+	m_clNameText.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.1f + m_CardBody.getPosition().x, m_CardBody.getPosition().y);
+	m_clHPText.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.6f + m_CardBody.getPosition().x, m_CardBody.getPosition().y);
+	
+	m_clSizeAndClassText.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.1f + m_CardBody.getPosition().x,
+		m_CardBody.getGlobalBounds().height * 0.4f + m_CardBody.getPosition().y);
+
+	m_clAbilityOneNameNDesc.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.1f + m_CardBody.getPosition().x,
+		m_CardBody.getGlobalBounds().height * 0.5f + m_CardBody.getPosition().y);
+	m_clAbilityOnePowNSpeed.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.85f + m_CardBody.getPosition().x,
+		m_CardBody.getGlobalBounds().height * 0.5f + m_CardBody.getPosition().y);
+
+	m_clAbilityTwoNameNDesc.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.1f + m_CardBody.getPosition().x,
+		m_CardBody.getGlobalBounds().height * 0.75f + m_CardBody.getPosition().y);
+	m_clAbilityTwoPowNSpeed.m_SetPosition(m_CardBody.getGlobalBounds().width * 0.85f + m_CardBody.getPosition().x,
+		m_CardBody.getGlobalBounds().height * 0.75f + m_CardBody.getPosition().y);
+
+	std::cout << m_CardBody.getPosition().x << " " << m_CardBody.getPosition().y << std::endl;
+}
+
 /*! \fn GetCardSize : This will return the size classification for the card between tiny and Huge.
 */
 int Card::m_GetCardSize()
