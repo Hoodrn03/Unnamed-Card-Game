@@ -6,6 +6,8 @@
 
 #include "GameWindow.h"
 #include "EventHandler.h"
+#include "UserInterface.h"
+
 #include "Mouse.h"
 #include "Networking.h"
 #include "ResourceManager.h"
@@ -37,6 +39,8 @@ private:
 
 	/*! \var The event handler for the game, all events in the game will be processed through this class. */
 	EventHandler m_clEventHandler; 
+
+	UserInterface m_clUserInterface; 
 
 	/*! \var This will hold all of the functions for the mouse within the game. */
 	Mouse m_clMouse; 

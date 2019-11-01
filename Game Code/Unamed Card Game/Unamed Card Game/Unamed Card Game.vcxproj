@@ -141,6 +141,7 @@
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Mouse.cpp" />
     <ClCompile Include="src\Networking.cpp" />
+    <ClCompile Include="src\UserInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Ability Types\Damage.h" />
@@ -389,6 +390,7 @@
     <ClInclude Include="inc\TGUI\Widgets\TreeView.hpp" />
     <ClInclude Include="inc\TGUI\Widgets\VerticalLayout.hpp" />
     <ClInclude Include="inc\Collection.h" />
+    <ClInclude Include="inc\UserInterface.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="inc\SFML\Audio\SoundFileFactory.inl" />

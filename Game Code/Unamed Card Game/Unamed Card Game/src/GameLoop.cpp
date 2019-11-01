@@ -22,6 +22,12 @@ int GameLoop::m_RunGame()
 
 		l_iError = m_clGameWindow.m_CreateWindow(800, 800);
 
+		// Create UserInterface
+
+		l_iError = m_clUserInterface.m_CreateGUI(m_clGameWindow.m_GetWindow());
+
+		// Check For Error
+
 		if (l_iError > 0)
 		{
 			throw l_iError;
@@ -30,8 +36,6 @@ int GameLoop::m_RunGame()
 		// Load objects. 
 
 		m_clFontManager.m_LoadFontFromFile("Arial", "assets/Fonts/Arial.ttf");
-
-
 
 		// Start gameplay loop.
 
@@ -63,6 +67,14 @@ int GameLoop::m_RunGame()
 			// Unable to form a connection between host and server. 
 
 			std::cout << "Error Code : " << l_iErrorType << "Unable to complete networking." << std::endl;
+
+			break;
+
+		case 3:
+
+			// Unable to create a user interface with the game window. 
+
+			std::cout << "Error Code : " << l_iErrorType << "Unable to create User Intrface." << std::endl;
 
 			break;
 
