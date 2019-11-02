@@ -24,9 +24,6 @@ private:
 	/*! \var The main game board for the game (Basic background). */
 	sf::RectangleShape m_GameBoard;
 
-	/*!\ var A list of rectangles which will act as the card lots on the game board. */
-	std::vector<sf::RectangleShape> v_CardSlots; 
-
 	// Member Functions 
 
 public:
@@ -41,6 +38,10 @@ public:
 	*Param Two : Float - The height for the game board.
 	*/
 	void m_CreateGameBoard(float width, float height);
+
+	void m_CreateGameBoard(float width, float height, sf::RenderWindow& window);
+
+	void m_CreateGameBoard(float width, float height, float x, float y);
 
 	/*! \fn CreateGameBoard (Override) : This will create the basis for the game board (using rectangle shapes).
 	*Param One : RenderWindow - The main game window allowing for the board to be properly sized.

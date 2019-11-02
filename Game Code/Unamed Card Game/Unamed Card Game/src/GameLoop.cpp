@@ -99,7 +99,7 @@ int GameLoop::m_GameplayLoop()
 	/*! \var The game board for the game, this will hold the cards on itself. */
 	GameBoard l_NewGameBoard;
 
-	l_NewGameBoard.m_CreateGameBoard(m_clGameWindow.m_GetWindow());
+	l_NewGameBoard.m_CreateGameBoard(700, 650, m_clGameWindow.m_GetWindow());
 
 	// End of game board setup. 
 
@@ -152,7 +152,7 @@ int GameLoop::m_GameplayLoop()
 
 		// Draw Here. 
 
-		// l_NewGameBoard.m_DrawGameBoard(m_clGameWindow.m_GetWindow()); 
+		l_NewGameBoard.m_DrawGameBoard(m_clGameWindow.m_GetWindow()); 
 
 		l_clCollection.m_GetCard(l_iCardIndex).m_DrawCard(m_clGameWindow.m_GetWindow());
 		l_clCollection.m_GetCard(l_iCardIndex + 1).m_DrawCard(m_clGameWindow.m_GetWindow());

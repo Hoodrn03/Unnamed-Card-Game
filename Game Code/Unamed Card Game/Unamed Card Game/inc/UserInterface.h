@@ -6,6 +6,9 @@
 
 #include "TGUI/TGUI.hpp"
 
+/*! \class This will be used to control all of the user interface elements within the game
+			it will hale the adding and removing of all of these widgits. 
+*/
 class UserInterface
 {
 	// Constructor
@@ -28,7 +31,7 @@ private:
 
 public:
 
-	tgui::Gui m_GetGUI(); 
+	tgui::Gui *m_GetGUI(); 
 
 	void m_ClearGUI(); 
 

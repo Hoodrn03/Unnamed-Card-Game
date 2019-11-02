@@ -8,9 +8,9 @@ UserInterface::~UserInterface()
 {
 }
 
-tgui::Gui UserInterface::m_GetGUI()
+tgui::Gui *UserInterface::m_GetGUI()
 {
-	return &m_ptrInterface->get;
+	return m_ptrInterface.get();
 }
 
 void UserInterface::m_ClearGUI()
